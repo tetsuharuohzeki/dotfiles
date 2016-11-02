@@ -1,0 +1,26 @@
+[user]
+	name = Tetsuharu OHZEKI
+	email = saneyuki.snyk@gmail.com
+
+[core]
+	autocrlf = false
+	editor = vim
+	excludesfile = ~/.gitignore_global
+
+[mergetool]
+	keepBackup = false
+
+[merge]
+	log = true # Include a first line for each of commit messages.
+
+[color]
+	ui = auto
+
+[alias]
+	glog = log --graph --decorate --branches
+	amend = commit --amend
+	raw-diff = diff --no-prefix
+	fixup = commit --fixup
+
+[i18n]
+	filesEncoding = utf-8
