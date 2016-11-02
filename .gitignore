@@ -1,2 +1,3 @@
 # credentials or needless
-,ssh/
+.ssh/
+setup
