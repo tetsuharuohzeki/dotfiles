@@ -30,7 +30,7 @@ func main() {
 
 	list := []config{
 		config{"gitconfig", ".gitconfig", false},
-		config{"gitignore", ".gitignore_global", false},
+		config{"gitignore_global", ".gitignore_global", false},
 		config{"ssh/", ".ssh/", false},
 	}
 
