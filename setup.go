@@ -32,6 +32,7 @@ func main() {
 		config{"gitconfig", ".gitconfig", false},
 		config{"gitignore_global", ".gitignore_global", false},
 		config{"ssh/", ".ssh/", false},
+		config{"bash/.bashrc", ".bashrc", false},
 	}
 
 	run(list)
