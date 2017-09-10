@@ -30,3 +30,13 @@ alias gvim="open $1 -a /Applications/MacVim.app --args --remote-tab-silent"
 
 # Use always vim
 alias vi="vim"
+
+# # Use gnu-sed instead of OSX sed
+# #alias sed="gsed"
+# 
+# # Use gnu-grep instead of OSX grep
+# alias grep="ggrep"
+# 
+# # Use gnu-binutils'
+# alias objdump="gobjdump"
+
