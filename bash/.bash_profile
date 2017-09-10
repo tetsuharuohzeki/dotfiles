@@ -12,6 +12,10 @@ export CARGO_HOME=$HOME/.cargo
 export PATH=$CARGO_HOME/bin:$PATH
 # export CARGO_INCREMENTAL=1
 
+# MacVim
+MACVIM_PATH=/Applications/MacVim.app
+export PATH=$MACVIM_PATH/Contents/bin:$PATH
+
 
 # rustc
 export RUST_BACKTRACE=1
