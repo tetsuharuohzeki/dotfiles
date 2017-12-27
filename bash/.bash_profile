@@ -17,7 +17,7 @@ export PATH=$MACVIM_PATH/Contents/bin:$PATH
 
 
 # rustc
-export RUST_BACKTRACE=1
+export RUST_BACKTRACE=full
 
 
 # Go
