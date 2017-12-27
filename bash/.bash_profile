@@ -10,7 +10,6 @@ export PATH=$HOMEBREW_PATH/bin:$PATH
 # rust cargo
 export CARGO_HOME=$HOME/.cargo
 export PATH=$CARGO_HOME/bin:$PATH
-# export CARGO_INCREMENTAL=1
 
 # MacVim
 MACVIM_PATH=/Applications/MacVim.app
