@@ -23,6 +23,8 @@ Desktop.ini
 
 # npm
 npm-debug.log
+# yarnpkg
+yarn-error.log
 
 # Python
 *.pyc
