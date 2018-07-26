@@ -10,6 +10,12 @@ if [ -f $HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash ]; then
   source $HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash
 fi
 
+## display git branch name
+#if [ -f $HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh ]; then
+#  source $HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh
+#  PROMPT_COMMAND='__git_ps1 "\n\u@\h:\w" "\$ "'
+#fi
+
 # bash-completion
 if [ -f $HOMEBREW_PREFIX/etc/bash_completion ]; then
   source $HOMEBREW_PREFIX/etc/bash_completion
