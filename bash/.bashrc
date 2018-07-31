@@ -13,7 +13,7 @@ fi
 ## display git branch name
 #if [ -f $HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh ]; then
 #  source $HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh
-#  PROMPT_COMMAND='__git_ps1 "\n\u@\h:\w" "\$ "'
+#  PROMPT_COMMAND='__git_ps1 "\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w" "\[\033[00m\]\$ "'
 #fi
 
 # bash-completion
