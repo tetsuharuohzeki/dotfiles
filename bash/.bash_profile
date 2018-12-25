@@ -24,7 +24,6 @@ export RUST_BACKTRACE=full
 export GOPATH=$HOME/src/go
 export PATH=$GOPATH/bin:$PATH
 
-
 # Load .bashrc
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
