@@ -29,8 +29,8 @@ func main() {
 	flag.Parse()
 
 	list := []config{
-		config{"gitconfig", ".gitconfig", false},
-		config{"gitignore_global", ".gitignore_global", false},
+		config{"git/.gitconfig", ".gitconfig", false},
+		config{"git/.gitignore_global", ".gitignore_global", false},
 		config{"ssh/", ".ssh/", false},
 		config{"bash/.bash_profile", ".bash_profile", false},
 		config{"bash/.bashrc", ".bashrc", false},

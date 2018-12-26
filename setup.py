@@ -16,8 +16,8 @@ print("$HOME: " + HOME)
 print("$XDG_CONFIG_HOME: " + XDG_CONFIG_HOME)
 
 LINK = [
-    ("/gitconfig",           HOME + "/.gitconfig"),
-    ("/gitignore_global",    HOME + "/.gitignore_global"),
+    ("/git/.gitconfig",           HOME + "/.gitconfig"),
+    ("/git/.gitignore_global",    HOME + "/.gitignore_global"),
 
     ("/ssh",                 HOME + "/.ssh"),
 ]
