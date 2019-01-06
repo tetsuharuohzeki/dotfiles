@@ -75,7 +75,7 @@ func run(manifest []config) {
 
 	notFound := false
 	for _, path := range list {
-		if !IsFileExists(path.Source) {
+		if !isFileExists(path.Source) {
 			notFound = true
 			log.Printf("Error: not found a source: %v", path.Source)
 		}
@@ -214,7 +214,7 @@ func createSymlink(t *pathPair, isDryRun bool) bool {
 	return true
 }
 
-func IsFileExists(filename string) bool {
+func isFileExists(filename string) bool {
 	_, err := os.Stat(filename)
 	return err == nil
 }
