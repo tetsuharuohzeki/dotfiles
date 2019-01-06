@@ -34,6 +34,8 @@ func main() {
 		config{"ssh/", ".ssh/", false},
 		config{"bash/.bash_profile", ".bash_profile", false},
 		config{"bash/.bashrc", ".bashrc", false},
+		config{"mercurial/.hgrc", ".hgrc", false},
+		config{"mercurial/.hgignore_global", ".hgignore_global", false},
 	}
 
 	run(list)

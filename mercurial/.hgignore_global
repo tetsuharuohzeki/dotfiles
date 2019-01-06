@@ -1,0 +1,30 @@
+syntax: glob
+
+*~
+*#
+*.dummy
+TAGS
+tags
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# binary
+*.o
+*.so
+*.dylib
+*.dSYM
+*.dll
+
+# vim
+*.un~
+*.swp
+*.swo
+
+# npm
+npm-debug.log
+# yarnpkg
+yarn-error.log
+
+# Python
+*.pyc
