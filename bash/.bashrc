@@ -39,3 +39,4 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 HISTSIZE=1000
 HISTFILESIZE=1000
+HISTCONTROL=ignoreboth
