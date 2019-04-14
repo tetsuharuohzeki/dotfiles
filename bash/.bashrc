@@ -36,3 +36,6 @@ alias vi="vim"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_CTRL_T_COMMAND=${FZF_DEFAULT_COMMAND}
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+HISTSIZE=1000
+HISTFILESIZE=1000
