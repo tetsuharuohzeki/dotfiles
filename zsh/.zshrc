@@ -21,8 +21,6 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 case ${OSTYPE} in
     darwin*)
-        HOMEBREW_PATH='/usr/local'
-
         # MacVim
         alias mvim='open $1 -a /Applications/MacVim.app'
         alias gvim='mvim'
