@@ -4,8 +4,8 @@ autoload -Uz colors && colors
 PROMPT="
 %{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${reset_color}%} %# "
 
-# Allow to completion dirname by <Tab>
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Use 'ls -G' as default
 alias ls='ls -G'
