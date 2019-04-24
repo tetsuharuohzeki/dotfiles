@@ -10,9 +10,19 @@ zstyle ':completion:*:default' menu select=1
 # Use 'ls -G' as default
 alias ls='ls -G'
 
-# MacVim
-alias mvim='open $1 -a /Applications/MacVim.app'
-alias gvim='mvim'
-
 # Use always vim
 alias vi='vim'
+
+case ${OSTYPE} in
+    darwin*)
+        HOMEBREW_PATH='/usr/local'
+
+        # MacVim
+        alias mvim='open $1 -a /Applications/MacVim.app'
+        alias gvim='mvim'
+
+        ;;
+
+    linux*)
+        ;;
+esac
