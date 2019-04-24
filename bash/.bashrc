@@ -26,7 +26,7 @@ alias ls="ls -G"
 
 # MacVim
 alias mvim="open $1 -a /Applications/MacVim.app"
-alias gvim="open $1 -a /Applications/MacVim.app --args --remote-tab-silent"
+alias gvim=mvim
 
 # Use always vim
 alias vi="vim"
