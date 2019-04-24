@@ -52,3 +52,15 @@ add-zsh-hook precmd vcs_info
 PROMPT='
 %{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${vcs_info_msg_0_}%}%{${reset_color}%}%# '
 
+
+#----------------------------------------------------------
+# History
+#
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+setopt hist_ignore_dups
+#setopt hist_ignore_all_dups
+setopt share_history
+
+
