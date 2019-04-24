@@ -36,6 +36,7 @@ func main() {
 		config{"bash/.bashrc", ".bashrc", false},
 		config{"mercurial/.hgrc", ".hgrc", false},
 		config{"mercurial/.hgignore_global", ".hgignore_global", false},
+		config{"zsh/.zshrc", ".zshrc", false},
 	}
 
 	run(list)
