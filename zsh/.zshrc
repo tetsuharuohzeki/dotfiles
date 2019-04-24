@@ -13,6 +13,12 @@ alias ls='ls -G'
 # Use always vim
 alias vi='vim'
 
+# https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_COMMAND=${FZF_DEFAULT_COMMAND}
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
 case ${OSTYPE} in
     darwin*)
         HOMEBREW_PATH='/usr/local'
