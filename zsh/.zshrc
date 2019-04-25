@@ -62,3 +62,45 @@ setopt hist_ignore_dups
 setopt share_history
 
 
+
+#----------------------------------------------------------
+# Zsh support for Apple Terminal.
+# Tell the terminal about the working directory whenever it changes.
+#
+# The base is /etc/bashrc_Apple_Terminal
+# see
+#   - https://apple.stackexchange.com/questions/128998/how-to-open-a-new-terminal-tab-in-current-working-directory
+#   - http://superuser.com/a/328148/180983
+#   - https://github.com/fish-shell/fish-shell/blob/82052a6cc9fa797070d8945130d45226d5cbc1c5/share/functions/__fish_config_interactive.fish#L266-L276
+#   - http://hints.macworld.com/article.php?story=20110722211753852
+# By http://superuser.com/a/328148/180983
+
+if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
+    update_terminal_cwd() {
+        # Identify the directory using a "file:" scheme URL, including
+        # the host name to disambiguate local vs. remote paths.
+
+        # Percent-encode the pathname.
+        local url_path=''
+        {
+            # Use LC_CTYPE=C to process text byte-by-byte. Ensure that
+            # LC_ALL isn't set, so it doesn't interfere.
+            local i ch hexch LC_CTYPE=C LC_ALL=
+            for ((i = 1; i <= ${#PWD}; ++i)); do
+                ch="$PWD[i]"
+                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+                    url_path+="$ch"
+                else
+                    printf -v hexch "%02X" "'$ch"
+                    url_path+="%$hexch"
+                fi
+            done
+        }
+
+        printf '\e]7;%s\a' "file://$HOST$url_path"
+    }
+
+    # Register the function so it is called at each prompt.
+    autoload add-zsh-hook
+    add-zsh-hook precmd update_terminal_cwd
+fi
