@@ -47,13 +47,15 @@ autoload -Uz add-zsh-hook
 setopt PROMPT_SUBST
 
 zstyle ':vcs_info:git:*' formats ' (%b)'
+# zstyle ':vcs_info:git:*' formats ' (%s:%b)'
 zstyle ':vcs_info:git:*' actionformats ' (%b|%a)'
 
 add-zsh-hook precmd vcs_info
 
 # If we wrap `%{${vcs_info_msg_0_}%}` with `""`, this code would not work....`
 PROMPT='
-%{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${vcs_info_msg_0_}%}%{${reset_color}%}%# '
+%{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${vcs_info_msg_0_}%}%{${reset_color}%} %# '
+# RPROMPT=$RPROMPT'%{${fg_bold[cyan]}%}${vcs_info_msg_0_}%{${reset_color}%}'
 
 
 #----------------------------------------------------------
