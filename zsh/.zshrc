@@ -1,11 +1,6 @@
-autoload -Uz compinit; compinit -i
-
 autoload -Uz colors && colors
 PROMPT="
 %{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${reset_color}%} %# "
-
-zstyle ':completion:*:default' menu select=2
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Use 'ls -G' as default
 alias ls='ls -G'
@@ -31,6 +26,16 @@ case ${OSTYPE} in
         ;;
 esac
 
+fpath=(
+    ~/.zfunc/
+    ~/.zfunc/*(N-/)
+
+    $fpath
+)
+autoload -Uz compinit
+compinit -i
+zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #----------------------------------------------------------
 # Display Git (or other VCS) branch name 
@@ -74,7 +79,6 @@ setopt share_history
 #   - https://github.com/fish-shell/fish-shell/blob/82052a6cc9fa797070d8945130d45226d5cbc1c5/share/functions/__fish_config_interactive.fish#L266-L276
 #   - http://hints.macworld.com/article.php?story=20110722211753852
 # By http://superuser.com/a/328148/180983
-
 if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
     update_terminal_cwd() {
         # Identify the directory using a "file:" scheme URL, including

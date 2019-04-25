@@ -38,6 +38,7 @@ func main() {
 		config{"mercurial/.hgignore_global", ".hgignore_global", false},
 		config{"zsh/.zshrc", ".zshrc", false},
 		config{"zsh/.zshenv", ".zshenv", false},
+		config{"zsh/zfunc", ".zfunc", false},
 	}
 
 	run(list)
