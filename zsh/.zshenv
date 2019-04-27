@@ -4,23 +4,26 @@
 
 case ${OSTYPE} in
     darwin*)
-        # homebrew
-        HOMEBREW_PATH='/usr/local'
-        export PATH=$HOMEBREW_PATH/bin:$PATH
+        () {
+            # homebrew
+            local HOMEBREW_PATH='/usr/local'
+            export PATH=$HOMEBREW_PATH/bin:$PATH
 
-        # MacVim
-        MACVIM_PATH=/Applications/MacVim.app
-        export PATH=$MACVIM_PATH/Contents/bin:$PATH
-
+            # MacVim
+            local MACVIM_PATH=/Applications/MacVim.app
+            export PATH=$MACVIM_PATH/Contents/bin:$PATH
+        }
         ;;
 
     linux*)
         ;;
 esac
 
-# nodebrew: https://github.com/hokaccha/nodebrew
-NODEBREW_PATH=$HOME/.nodebrew/current/bin
-export PATH=$NODEBREW_PATH:$PATH
+() {
+    # nodebrew: https://github.com/hokaccha/nodebrew
+    local NODEBREW_PATH=$HOME/.nodebrew/current/bin
+    export PATH=$NODEBREW_PATH:$PATH
+}
 
 # Android SDK
 # ANDROID_SDK_PATH=$HOME/appconfig/android-sdk
