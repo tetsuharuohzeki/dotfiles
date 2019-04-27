@@ -56,6 +56,14 @@ RPROMPT='%{${fg_bold[cyan]}%}${vcs_info_msg_0_}%{${reset_color}%}'
 
 
 #----------------------------------------------------------
+# Keybinding
+#
+
+# Allow to use `delete` key.
+bindkey "^[[3~" delete-char
+
+
+#----------------------------------------------------------
 # History
 #
 export HISTFILE=${HOME}/.zsh_history
