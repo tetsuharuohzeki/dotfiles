@@ -16,6 +16,12 @@ case ${OSTYPE} in
         alias mvim="open $1 -a /Applications/MacVim.app"
         alias gvim=mvim
 
+        # neovim use set as vim if there is not it.
+        if type nvim >/dev/null 2>&1; then
+            alias vim='nvim'
+            alias builtin_vim='/usr/bin/vim'
+        fi
+
         # complete git commands
         if [ -f ${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash ]; then
             source ${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash

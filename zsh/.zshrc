@@ -20,6 +20,12 @@ case ${OSTYPE} in
         alias mvim='open $1 -a /Applications/MacVim.app'
         alias gvim='mvim'
 
+        # neovim use set as vim if there is it.
+        if type nvim >/dev/null 2>&1; then
+            alias vim='nvim'
+            alias builtin_vim='/usr/bin/vim'
+        fi
+
         ;;
 
     linux*)
