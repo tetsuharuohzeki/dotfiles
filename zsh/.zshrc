@@ -35,10 +35,6 @@ case ${OSTYPE} in
 
         #   $fpath
         # )
-
-        # Override the editor used by git.
-        # FIXME: Essentially, I should use `include` directive for `gitconfig`.
-        export GIT_EDITOR='nvim'
         ;;
 
     linux*)
