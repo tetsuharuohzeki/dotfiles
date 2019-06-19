@@ -1,0 +1,4 @@
+# At git v2.22, this setting does not show up by `git config --global ***.***`.
+# `git config core.editor` display this value.
+[core]
+	editor = nvim
