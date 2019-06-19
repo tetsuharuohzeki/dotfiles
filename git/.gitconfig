@@ -24,3 +24,6 @@
 
 [i18n]
 	filesEncoding = utf-8
+
+[include]
+	path = ~/.gitconfig_os

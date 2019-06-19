@@ -41,6 +41,14 @@ func main() {
 		config{"zsh/zfunc", ".zfunc", false},
 	}
 
+	const platformSpecificGitConfig = ".gitconfig_os"
+	switch runtime.GOOS {
+	case "darwin":
+		list = append(list, config{"git/.gitconfig_darwin", platformSpecificGitConfig, false})
+	default:
+		list = append(list, config{"git/.gitconfig_empty", platformSpecificGitConfig, false})
+	}
+
 	run(list)
 }
 
