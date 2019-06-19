@@ -26,6 +26,16 @@ case ${OSTYPE} in
             alias builtin_vim='/usr/bin/vim'
         fi
 
+
+        # This is disabled since `/bin/zsh` bundled by macOS 10.14 Mojave includes its path by default.
+        # local homebrew_prefix='/usr/local'
+        # fpath=(
+        #   ${homebrew_prefix}/share/zsh/site-functions
+        #   ${homebrew_prefix}/share/zsh/site-functions/*(N-/)
+
+        #   $fpath
+        # )
+
         ;;
 
     linux*)
@@ -33,7 +43,7 @@ case ${OSTYPE} in
 esac
 
 fpath=(
-    ~/.zfunc/
+    ~/.zfunc
     ~/.zfunc/*(N-/)
 
     $fpath
