@@ -130,3 +130,12 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
     autoload add-zsh-hook
     add-zsh-hook precmd update_terminal_cwd
 fi
+
+# Copy from /etc/zshrc in macOS 10.14
+# Correctly display UTF-8 with combining characters.
+if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+    setopt combiningchars
+fi
+
+# Copy from /etc/zshrc in macOS 10.14
+disable log
