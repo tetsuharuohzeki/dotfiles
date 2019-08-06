@@ -52,11 +52,12 @@ compinit -i
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+autoload -Uz add-zsh-hook
+
 #----------------------------------------------------------
 # Display Git (or other VCS) branch name 
 #
 autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
 
 # Allow refer variables in PROMPT
 setopt PROMPT_SUBST
