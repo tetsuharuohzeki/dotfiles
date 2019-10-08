@@ -95,14 +95,10 @@ setopt share_history
 # Zsh support for Apple Terminal.
 # Tell the terminal about the working directory whenever it changes.
 #
-# The base is /etc/bashrc_Apple_Terminal
-# see
-#   - https://apple.stackexchange.com/questions/128998/how-to-open-a-new-terminal-tab-in-current-working-directory
-#   - http://superuser.com/a/328148/180983
-#   - https://github.com/fish-shell/fish-shell/blob/82052a6cc9fa797070d8945130d45226d5cbc1c5/share/functions/__fish_config_interactive.fish#L266-L276
-#   - http://hints.macworld.com/article.php?story=20110722211753852
-# By http://superuser.com/a/328148/180983
+# The base is /etc/zrc_Apple_Terminal in macOS Catalina
+# zsh support for Terminal.
 if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
+
     update_terminal_cwd() {
         # Identify the directory using a "file:" scheme URL, including
         # the host name to disambiguate local vs. remote paths.
@@ -114,13 +110,13 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
             # LC_ALL isn't set, so it doesn't interfere.
             local i ch hexch LC_CTYPE=C LC_ALL=
             for ((i = 1; i <= ${#PWD}; ++i)); do
-                ch="$PWD[i]"
-                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
-                    url_path+="$ch"
-                else
-                    printf -v hexch "%02X" "'$ch"
-                    url_path+="%$hexch"
-                fi
+            ch="$PWD[i]"
+            if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+                url_path+="$ch"
+            else
+                printf -v hexch "%02X" "'$ch"
+                url_path+="%$hexch"
+            fi
             done
         }
 
