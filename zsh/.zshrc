@@ -1,5 +1,12 @@
-# Load by hand because we set `unsetopt GLOBAL_RCS` in `.zshenv`
-[ -r "/etc/zshrc" ] && . "/etc/zshrc"
+case ${OSTYPE} in
+    darwin*)
+        # Load by hand because we set `unsetopt GLOBAL_RCS` in `.zshenv` in macOS
+        [ -r "/etc/zshrc" ] && . "/etc/zshrc"
+        ;;
+
+    linux*)
+        ;;
+esac
 
 autoload -Uz colors && colors
 PROMPT="
