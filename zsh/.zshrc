@@ -83,7 +83,7 @@ bindkey "^[[3~" delete-char
 # History
 #
 export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=2000
 export SAVEHIST=1000
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
