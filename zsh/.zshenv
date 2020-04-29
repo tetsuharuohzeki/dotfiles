@@ -45,10 +45,6 @@ export PATH=$CARGO_HOME/bin:$PATH
 # rustc
 export RUST_BACKTRACE=full
 
-# for servo build
-#export OPENSSL_INCLUDE_DIR="$(brew --prefix openssl)/include"
-#export OPENSSL_LIB_DIR="$(brew --prefix openssl)/lib"
-
 # Go
 export GOPATH=$HOME/src/go
 export PATH=$GOPATH/bin:$PATH
