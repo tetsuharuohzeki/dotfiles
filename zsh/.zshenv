@@ -48,3 +48,6 @@ export RUST_BACKTRACE=full
 # Go
 export GOPATH=$HOME/src/go
 export PATH=$GOPATH/bin:$PATH
+
+# sccache local cache size
+export SCCACHE_CACHE_SIZE="20G"
