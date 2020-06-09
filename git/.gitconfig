@@ -13,6 +13,9 @@
 [merge]
 	log = true # Include a first line for each of commit messages.
 
+[pull]
+	rebase = true
+
 [color]
 	ui = auto
 
