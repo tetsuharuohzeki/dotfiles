@@ -13,4 +13,5 @@ brew "oxipng"
 brew "p7zip
 brew "ripgrep"
 brew "sccache"
+brew "tree"
 brew "tig"
