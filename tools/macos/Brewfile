@@ -1,5 +1,7 @@
+brew "bat"
 brew "clang-format"
 brew "cmake"
+brew "fd"
 brew "fzf"
 brew "git"
 brew "go"
