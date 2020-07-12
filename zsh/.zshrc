@@ -24,6 +24,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 # Compare ripgrep 11.0.2 with fd 7.4.0, ripgrep is slightly faster.
 export FZF_CTRL_T_COMMAND=${FZF_DEFAULT_COMMAND}
+export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 
 case ${OSTYPE} in
