@@ -43,7 +43,7 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 # It might be a best way to switch by `direnv`
 export FZF_CTRL_T_COMMAND=${FZF_DEFAULT_COMMAND}
 export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
-export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git --color never'
 # `tree` is pretty faster than `exa --tree`.
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
