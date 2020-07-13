@@ -1,3 +1,6 @@
+#----------------------------------------------------------
+# Load platform default settings.
+#
 case ${OSTYPE} in
     darwin*)
         # Load by hand because we set `unsetopt GLOBAL_RCS` in `.zshenv` in macOS
@@ -8,9 +11,17 @@ case ${OSTYPE} in
         ;;
 esac
 
+#----------------------------------------------------------
+# Prompt
+#
 autoload -Uz colors && colors
 PROMPT="
 %{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${reset_color}%} %# "
+
+
+#----------------------------------------------------------
+# Alias
+#
 
 # Use 'ls -G' as default
 alias ls='ls -G'
@@ -19,12 +30,14 @@ alias ls='ls -G'
 alias vi='vim'
 
 
-##############################################
-# https://github.com/junegunn/fzf
-##############################################
+#----------------------------------------------------------
+# fzf https://github.com/junegunn/fzf#settings
+#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
 # Compare ripgrep 11.0.2 with fd 7.4.0, ripgrep is slightly faster.
 # For large scale git repository, `git ls-tree -r --name-only HEAD` would be faster.
 # It might be a best way to switch by `direnv`
@@ -35,6 +48,9 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 
+#----------------------------------------------------------
+# Alias (platform specific)
+#
 case ${OSTYPE} in
     darwin*)
         # MacVim
@@ -62,6 +78,10 @@ case ${OSTYPE} in
         ;;
 esac
 
+
+#----------------------------------------------------------
+# Completion
+#
 fpath=(
     ~/.zfunc
     ~/.zfunc/*(N-/)
