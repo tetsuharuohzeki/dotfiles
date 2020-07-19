@@ -18,6 +18,10 @@ autoload -Uz colors && colors
 PROMPT="
 %{${fg_bold[yellow]}%}%n@%m%{${reset_color}%}:%{${fg_bold[cyan]}%}%~%{${reset_color}%} %# "
 
+# Show the status code returned from the previous command
+setopt prompt_percent
+PROMPT="%(?..%B%F{red}[status code] %?%f%b )${PROMPT}"
+
 
 #----------------------------------------------------------
 # Alias
