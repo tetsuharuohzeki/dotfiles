@@ -6,6 +6,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--clean", action="store_true", help="clean links which are set up by this script")
+parser.add_argument("--dry-run", action="store_true", help="dry-run")
 args = parser.parse_args()
 
 CURRENT_PATH = os.getcwd()
@@ -30,11 +31,14 @@ LINK = [
 LINK = list(map(lambda pair: (pair[0], HOME + "/" + pair[1]), LINK))
 
 def main():
+    print(args)
+
     # Remove current exist links.
     for (_, linkTarget) in LINK:
+        print("Remove: " + linkTarget)
         try:
-            os.remove(linkTarget)
-            print("Remove: " + linkTarget)
+            if not args.dry_run:
+                os.remove(linkTarget)
         except OSError as e:
             print(e)
 
@@ -47,7 +51,8 @@ def main():
         print("Create Symlink (link -> src): " + linkTarget + " -> " + src)
 
         try:
-            os.symlink(src, linkTarget)
+            if not args.dry_run:
+                os.symlink(src, linkTarget)
         except OSError as e:
             print(e)
 
