@@ -2,6 +2,11 @@
 #coding:utf-8
 
 import os
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--clean", action="store_true", help="clean links which are set up by this script")
+args = parser.parse_args()
 
 CURRENT_PATH = os.getcwd()
 HOME = os.environ["HOME"]
@@ -24,20 +29,26 @@ LINK = [
 
 LINK = list(map(lambda pair: (pair[0], HOME + "/" + pair[1]), LINK))
 
-# Remove current exist links.
-for (_, linkTarget) in LINK:
-    try:
-        os.remove(linkTarget)
-        print("Remove: " + linkTarget)
-    except OSError as e:
-        print(e)
+def main():
+    # Remove current exist links.
+    for (_, linkTarget) in LINK:
+        try:
+            os.remove(linkTarget)
+            print("Remove: " + linkTarget)
+        except OSError as e:
+            print(e)
 
-# Make links
-for (src, linkTarget) in LINK:
-    src = CURRENT_PATH + "/" + src
-    print("Create Symlink (link -> src): " + linkTarget + " -> " + src)
+    if args.clean:
+        return;
 
-    try:
-        os.symlink(src, linkTarget)
-    except OSError as e:
-        print(e)
+    # Make links
+    for (src, linkTarget) in LINK:
+        src = CURRENT_PATH + "/" + src
+        print("Create Symlink (link -> src): " + linkTarget + " -> " + src)
+
+        try:
+            os.symlink(src, linkTarget)
+        except OSError as e:
+            print(e)
+
+main()
