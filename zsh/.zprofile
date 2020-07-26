@@ -4,14 +4,6 @@
 case ${OSTYPE} in
     darwin*)
         () {
-            # macOS (at least ~10.14) has /etc/zprofile
-            # and it excutes `/usr/libexec/path_helper` to add some dirs to the front of `$PATH`.
-            # This settings disables to load global configurations
-            unsetopt GLOBAL_RCS
-            # setup default path items
-            export PATH=''
-            eval $(/usr/libexec/path_helper -s)
-
             # homebrew
             local HOMEBREW_PATH='/usr/local'
             export PATH=$HOMEBREW_PATH/bin:$PATH

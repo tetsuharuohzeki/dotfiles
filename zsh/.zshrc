@@ -3,8 +3,6 @@
 #
 case ${OSTYPE} in
     darwin*)
-        # Load by hand because we set `unsetopt GLOBAL_RCS` in `.zshenv` in macOS
-        [ -r "/etc/zshrc" ] && . "/etc/zshrc"
         ;;
 
     linux*)
