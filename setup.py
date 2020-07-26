@@ -22,10 +22,16 @@ print("$HOME: " + HOME)
 print("$XDG_CONFIG_HOME: " + XDG_CONFIG_HOME)
 
 LINK = [
-    ("git/.gitconfig",           ".gitconfig"),
-    ("git/.gitignore_global",    ".gitignore_global"),
-
-    ("ssh",                      ".ssh"),
+    ("git/.gitconfig",             ".gitconfig"),
+    ("git/.gitignore_global",      ".gitignore_global"),
+    ("ssh",                        ".ssh"),
+    ("bash/.bash_profile",         ".bash_profile"),
+    ("bash/.bashrc",               ".bashrc"),
+    ("mercurial/.hgrc",            ".hgrc"),
+    ("mercurial/.hgignore_global", ".hgignore_global"),
+    ("zsh/.zshrc",                 ".zsh_rc"),
+    ("zsh/.zshenv",                ".zshenv"),
+    ("zsh/zfunc",                  ".zfunc"),
 ]
 
 LINK = list(map(lambda pair: (pair[0], HOME + "/" + pair[1]), LINK))
