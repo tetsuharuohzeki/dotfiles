@@ -29,16 +29,16 @@ func main() {
 	flag.Parse()
 
 	list := []config{
-		config{"git/.gitconfig", ".gitconfig", false},
-		config{"git/.gitignore_global", ".gitignore_global", false},
-		config{"ssh/", ".ssh/", false},
-		config{"bash/.bash_profile", ".bash_profile", false},
-		config{"bash/.bashrc", ".bashrc", false},
-		config{"mercurial/.hgrc", ".hgrc", false},
-		config{"mercurial/.hgignore_global", ".hgignore_global", false},
-		config{"zsh/.zshrc", ".zshrc", false},
-		config{"zsh/.zshenv", ".zshenv", false},
-		config{"zsh/zfunc", ".zfunc", false},
+		{"git/.gitconfig", ".gitconfig", false},
+		{"git/.gitignore_global", ".gitignore_global", false},
+		{"ssh/", ".ssh/", false},
+		{"bash/.bash_profile", ".bash_profile", false},
+		{"bash/.bashrc", ".bashrc", false},
+		{"mercurial/.hgrc", ".hgrc", false},
+		{"mercurial/.hgignore_global", ".hgignore_global", false},
+		{"zsh/.zshrc", ".zshrc", false},
+		{"zsh/.zshenv", ".zshenv", false},
+		{"zsh/zfunc", ".zfunc", false},
 	}
 
 	const platformSpecificGitConfig = ".gitconfig_os"
