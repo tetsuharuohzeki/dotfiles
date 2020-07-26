@@ -16,26 +16,26 @@ print("$HOME: " + HOME)
 print("$XDG_CONFIG_HOME: " + XDG_CONFIG_HOME)
 
 LINK = [
-    ("/git/.gitconfig",           HOME + "/.gitconfig"),
-    ("/git/.gitignore_global",    HOME + "/.gitignore_global"),
+    ("git/.gitconfig",           HOME + "/.gitconfig"),
+    ("git/.gitignore_global",    HOME + "/.gitignore_global"),
 
-    ("/ssh",                 HOME + "/.ssh"),
+    ("ssh",                 HOME + "/.ssh"),
 ]
 
 # Remove current exist links.
-for (_, link) in LINK:
+for (_, linkTarget) in LINK:
     try:
-        os.remove(link)
-        print("Remove: " + link)
+        os.remove(linkTarget)
+        print("Remove: " + linkTarget)
     except OSError as e:
         print(e)
 
 # Make links
-for (src, link) in LINK:
-    src = CURRENT_PATH + src
-    print("Create Symlink (link -> src): " + link + " -> " + src)
+for (src, linkTarget) in LINK:
+    src = CURRENT_PATH + "/" + src
+    print("Create Symlink (link -> src): " + linkTarget + " -> " + src)
 
     try:
-        os.symlink(src, link)
+        os.symlink(src, linkTarget)
     except OSError as e:
         print(e)
