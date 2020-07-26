@@ -7,6 +7,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--clean", action="store_true", help="clean links which are set up by this script")
 parser.add_argument("--dry-run", action="store_true", help="dry-run")
+parser.add_argument("--enable-bash", action="store_true", help="Create a link for bash configration")
 args = parser.parse_args()
 
 CURRENT_PATH = os.getcwd()
@@ -25,8 +26,7 @@ LINK = [
     ("git/.gitconfig",             ".gitconfig"),
     ("git/.gitignore_global",      ".gitignore_global"),
     ("ssh",                        ".ssh"),
-    ("bash/.bash_profile",         ".bash_profile"),
-    ("bash/.bashrc",               ".bashrc"),
+
     ("mercurial/.hgrc",            ".hgrc"),
     ("mercurial/.hgignore_global", ".hgignore_global"),
     ("zsh/.zshrc",                 ".zshrc"),
@@ -34,10 +34,17 @@ LINK = [
     ("zsh/zfunc",                  ".zfunc"),
 ]
 
+if args.enable_bash:
+    LINK.extend([
+        ("bash/.bash_profile",         ".bash_profile"),
+        ("bash/.bashrc",               ".bashrc"),
+    ])
+
 LINK = list(map(lambda pair: (pair[0], HOME + "/" + pair[1]), LINK))
 
 def main():
-    print(args)
+    if args.dry_run:
+        print("### This is running as dry-run mode. This will not cause any actual change. ###")
 
     # Remove current exist links.
     for (_, linkTarget) in LINK:

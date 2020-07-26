@@ -22,23 +22,31 @@ type config struct {
 
 var isClean bool
 var isDryRun bool
+var useBash bool
 
 func main() {
 	flag.BoolVar(&isClean, "clean", false, "clean links which are set up by this script")
 	flag.BoolVar(&isDryRun, "dry-run", false, "dry-run")
+	flag.BoolVar(&useBash, "enable-bash", false, "Create a link for bash configration")
 	flag.Parse()
 
 	list := []config{
 		{"git/.gitconfig", ".gitconfig", false},
 		{"git/.gitignore_global", ".gitignore_global", false},
 		{"ssh/", ".ssh/", false},
-		{"bash/.bash_profile", ".bash_profile", false},
-		{"bash/.bashrc", ".bashrc", false},
 		{"mercurial/.hgrc", ".hgrc", false},
 		{"mercurial/.hgignore_global", ".hgignore_global", false},
 		{"zsh/.zshrc", ".zshrc", false},
 		{"zsh/.zshenv", ".zshenv", false},
 		{"zsh/zfunc", ".zfunc", false},
+	}
+
+	if useBash {
+		list = append(
+			list,
+			config{"bash/.bash_profile", ".bash_profile", false},
+			config{"bash/.bashrc", ".bashrc", false},
+		)
 	}
 
 	const platformSpecificGitConfig = ".gitconfig_os"
