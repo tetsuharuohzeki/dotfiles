@@ -1,0 +1,39 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean:
+    ~/:
+    ~/.config:
+
+- link:
+    ~/.gitconfig:
+        path: git/.gitconfig
+    ~/.gitignore_global:
+        path: git/.gitignore_global
+    ~/.gitconfig_os:
+        if: '[ `uname` = Darwin ]'
+        path: "git/.gitconfig_darwin"
+
+    ~/.hgrc:
+        path: mercurial/.hgrc
+    ~/hgignore_global:
+        path: mercurial/.hgignore_global
+
+    ~/.zshenv:
+        path: zsh/.zshenv
+    ~/.zprofile:
+        path: zsh/.zprofile
+    ~/.zshrc:
+        path: zsh/.zshrc
+    ~/.zfunc:
+        path: zsh/zfunc
+
+    ~/.ssh:
+        path: ssh/
+
+#    ~/.bash_profile:
+#        path: bash/.bash_profile
+#    ~/.bashrc:
+#        path: bash/.bashrc
