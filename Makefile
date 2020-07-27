@@ -6,8 +6,16 @@ help:
 	@exit 1
 
 clean: ## Clean up symlinks
-	./install --only clean
+	go run setup.go -clean
 
 run: ## Create symlinks
-	./install
+	go run setup.go
 
+dry_run: ## dry-run mode
+	go run setup.go -dry-run
+
+clean_without_go: ## Clean up symlinks without go
+	./install --only clean
+
+run_without_go: ## Create symlinks without go
+	./install
