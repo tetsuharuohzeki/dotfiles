@@ -18,7 +18,7 @@
 
     ~/.hgrc:
         path: mercurial/.hgrc
-    ~/hgignore_global:
+    ~/.hgignore_global:
         path: mercurial/.hgignore_global
 
     ~/.zshenv:
