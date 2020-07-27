@@ -30,6 +30,7 @@ LINK = [
     ("mercurial/.hgrc",            ".hgrc"),
     ("mercurial/.hgignore_global", ".hgignore_global"),
     ("zsh/.zshrc",                 ".zshrc"),
+    ("zsh/.zprofile",              ".zprofile"),
     ("zsh/.zshenv",                ".zshenv"),
     ("zsh/zfunc",                  ".zfunc"),
 ]

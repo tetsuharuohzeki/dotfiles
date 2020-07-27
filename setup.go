@@ -37,6 +37,7 @@ func main() {
 		{"mercurial/.hgrc", ".hgrc", false},
 		{"mercurial/.hgignore_global", ".hgignore_global", false},
 		{"zsh/.zshrc", ".zshrc", false},
+		{"zsh/.zprofile", ".zprofile", false},
 		{"zsh/.zshenv", ".zshenv", false},
 		{"zsh/zfunc", ".zfunc", false},
 	}
