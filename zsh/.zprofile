@@ -1,6 +1,9 @@
 #----------------------------------------------------------
 # PATH
 #
+# deduplicate items in path.
+typeset -gU path PATH
+
 case ${OSTYPE} in
     darwin*)
         () {
