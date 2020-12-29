@@ -28,6 +28,9 @@
 	llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
 	fdiff = "!git hist | fzf | awk '{print $2}' | xargs -I {} git diff {}^ {}"
 
+[init]
+	defaultBranch = main
+
 [i18n]
 	filesEncoding = utf-8
 
