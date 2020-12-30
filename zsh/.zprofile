@@ -40,6 +40,11 @@ esac
     local NODEBREW_PATH=$HOME/.nodebrew/current/bin
     export PATH=$NODEBREW_PATH:$PATH
 
+    # Node.js still does not provide aarch64-macos build.
+    if [[ ${CPUTYPE} = "arm64" ]]; then
+        alias nodebrew="arch -arch x86_64 /usr/local/bin/nodebrew"
+    fi
+
     # Android SDK
     # ANDROID_SDK_PATH=$HOME/appconfig/android-sdk
     # ADB_PATH=$ANDROID_SDK_PATH/platform-tools
