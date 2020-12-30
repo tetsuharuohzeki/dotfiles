@@ -18,7 +18,7 @@ case ${OSTYPE} in
                 ${PATH}
             )
 
-            if [[ ${CPUTYPE} = "arm64" ]] then
+            if [[ ${CPUTYPE} = "arm64" ]]; then
                 alias brew_intel="arch -arch x86_64 ${HOMEBREW_PATH_INTEL}/bin/brew"
                 alias brew_arm64="arch -arch arm64e ${HOMEBREW_PATH_ARM64}/bin/brew"
             fi
