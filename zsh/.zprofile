@@ -42,7 +42,7 @@ esac
 
     # Node.js still does not provide aarch64-macos build.
     if [[ ${CPUTYPE} = "arm64" ]]; then
-        alias nodebrew="arch -arch x86_64 /usr/local/bin/nodebrew"
+        alias nodebrew="arch -arch x86_64 /opt/homebrew/bin/nodebrew"
     fi
 
     # Android SDK
