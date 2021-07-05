@@ -32,7 +32,7 @@ func main() {
 
 	list := []config{
 		{"git/.gitconfig", ".gitconfig", false},
-		{"git/.gitignore_global", ".gitignore_global", false},
+		{"git/.gitignore_global", ".config/git/ignore", false},
 		{"ssh/", ".ssh/", false},
 		{"mercurial/.hgrc", ".hgrc", false},
 		{"mercurial/.hgignore_global", ".hgignore_global", false},

@@ -5,7 +5,6 @@
 [core]
 	autocrlf = false
 	editor = vim
-	excludesfile = ~/.gitignore_global
 
 [mergetool]
 	keepBackup = false
