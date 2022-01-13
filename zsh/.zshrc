@@ -135,3 +135,13 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_SPACE
+
+
+#----------------------------------------------------------
+# Setup envvars
+# See
+#   - https://direnv.net/
+#   - https://github.com/direnv/direnv
+if type "direnv" > /dev/null 2>&1; then
+    eval "$(direnv hook zsh)"
+fi
