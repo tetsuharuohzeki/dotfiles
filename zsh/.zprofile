@@ -18,14 +18,19 @@ case ${OSTYPE} in
                 ${PATH}
             )
 
+            local HOMEBREW_PATH=${HOMEBREW_PATH_INTEL}
             if [[ ${CPUTYPE} = "arm64" ]]; then
                 alias brew_intel="arch -arch x86_64 ${HOMEBREW_PATH_INTEL}/bin/brew"
                 alias brew_arm64="arch -arch arm64e ${HOMEBREW_PATH_ARM64}/bin/brew"
+                HOMEBREW_PATH=${HOMEBREW_PATH_ARM64}
             fi
 
             # MacVim
             local MACVIM_PATH=/Applications/MacVim.app
             export PATH=$MACVIM_PATH/Contents/bin:$PATH
+
+            # git jump
+            export PATH=${HOMEBREW_PATH}/share/git-core/contrib/git-jump/:$PATH
         }
         ;;
 
