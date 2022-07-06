@@ -10,7 +10,6 @@ case ${OSTYPE} in
             # homebrew
             local HOMEBREW_PATH_INTEL='/usr/local'
             local HOMEBREW_PATH_ARM64='/opt/homebrew'
-            #export PATH=${HOMEBREW_PATH_A64}/bin:$HOMEBREW_PATH_X64/bin:$PATH
 
             path=(
                 ${HOMEBREW_PATH_ARM64}/bin(N-/)
@@ -20,7 +19,7 @@ case ${OSTYPE} in
 
             local HOMEBREW_PATH=${HOMEBREW_PATH_INTEL}
             if [[ ${CPUTYPE} = "arm64" ]]; then
-                alias brew_intel="arch -arch x86_64 ${HOMEBREW_PATH_INTEL}/bin/brew"
+                #alias brew_intel="arch -arch x86_64 ${HOMEBREW_PATH_INTEL}/bin/brew"
                 alias brew_arm64="arch -arch arm64e ${HOMEBREW_PATH_ARM64}/bin/brew"
                 HOMEBREW_PATH=${HOMEBREW_PATH_ARM64}
             fi
