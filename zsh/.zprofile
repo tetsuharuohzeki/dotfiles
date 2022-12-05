@@ -40,14 +40,7 @@ case ${OSTYPE} in
 esac
 
 () {
-    # nodebrew: https://github.com/hokaccha/nodebrew
-    local NODEBREW_PATH=$HOME/.nodebrew/current/bin
-    export PATH=$NODEBREW_PATH:$PATH
-
-    # Node.js still does not provide aarch64-macos build.
-    if [[ ${CPUTYPE} = "arm64" ]]; then
-        alias nodebrew_intel="arch -arch x86_64 /opt/homebrew/bin/nodebrew"
-    fi
+    eval "$(fnm env)"
 
     # Android SDK
     # ANDROID_SDK_PATH=$HOME/appconfig/android-sdk
