@@ -19,7 +19,7 @@
 	ui = auto
 
 [alias]
-	glog = log --graph --decorate --branches
+	glog = log --graph --decorate --pretty=oneline --abbrev-commit --branches
 	amend = commit --amend
 	amend-no-edit = commit --amend --no-edit
 	raw-diff = diff --no-prefix
