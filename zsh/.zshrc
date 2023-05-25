@@ -3,6 +3,10 @@
 #
 case ${OSTYPE} in
     darwin*)
+        () {
+            # Use clonefile(2) to use APFS' CoW by default.
+            alias cp='cp -c'
+        }
         ;;
 
     linux*)
