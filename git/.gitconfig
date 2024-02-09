@@ -26,7 +26,7 @@
 	fixup = commit --fixup
 	llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
 	# based on https://gist.github.com/junegunn/f4fca918e937e6bf5bad?permalink_comment_id=3715673#gistcomment-3715673
-	fzf = !"\
+	fzlog = !"\
         function gfzf() {\
             local filter;\
             if [ -n $@ ] && [ -e $@ ]; then\
@@ -57,3 +57,5 @@
 
 [include]
 	path = ~/.gitconfig_os
+[cinnabar]
+	version-check = 1706092227
